@@ -1,3 +1,5 @@
+
+
 \# Software Project Management — Requirements
 
 
@@ -94,6 +96,8 @@ As a visitor, I want to create an account so that I can access the application's
 
 \*\*Acceptance Criteria:\*\*
 
+
+
 \- Required registration fields are validated.
 
 \- Invalid registration data is rejected.
@@ -116,6 +120,8 @@ As a registered user, I want to log in so that I can access protected applicatio
 
 \*\*Acceptance Criteria:\*\*
 
+
+
 \- Valid credentials allow access.
 
 \- Invalid credentials are rejected.
@@ -136,6 +142,8 @@ As an authenticated user, I want to browse tourism content for a selected munici
 
 \*\*Acceptance Criteria:\*\*
 
+
+
 \- Tourism data is retrieved from the external API.
 
 \- Valid data is stored in the local database.
@@ -154,6 +162,8 @@ As a user, I want to indicate my tourism interests so that the application can u
 
 \*\*Acceptance Criteria:\*\*
 
+
+
 \- The user can complete the questionnaire.
 
 \- Answers are processed into a preference profile.
@@ -169,6 +179,8 @@ As a user, I want tourism content to be ranked according to my interests so that
 
 
 \*\*Acceptance Criteria:\*\*
+
+
 
 \- Recommendations use the user's preference profile.
 
@@ -187,6 +199,8 @@ As a user, I want to ask tourism-related questions so that I can obtain informat
 
 
 \*\*Acceptance Criteria:\*\*
+
+
 
 \- The chatbot is accessible within the application.
 
@@ -227,4 +241,6 @@ The following decisions must be documented during project planning:
 
 
 This document is a starting point and will be reviewed and refined during the project. Changes must reflect actual project decisions and implementation progress.
+
+
 
