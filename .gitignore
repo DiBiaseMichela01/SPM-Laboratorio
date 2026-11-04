@@ -19,3 +19,8 @@
 **/appsettings.Development.json
 .env
 .env.*
+
+# Ignore local SQLite databases
+*.db
+*.db-shm
+*.db-wal
