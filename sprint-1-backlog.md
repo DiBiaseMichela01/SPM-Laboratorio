@@ -39,13 +39,9 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 
 | ID | User Story | Priority | Story Points | Status |
-
 |---|---|---|---|---|
-
 | US-01 | User Registration | 1 | 3 |  In Progress |
-
 | US-02 | User Login | 2 | 2 | To Do |
-
 | **Total** | | | **5** | |
 
 
@@ -59,21 +55,13 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 
 | Task | Description | Estimated Hours |Status |
-
 |---|---|---:|---|
-
 | T1.1 | Design registration form and input fields | 5 |In Progress |
-
 | T1.2 | Design user entity and database structure | 5 |Done |
-
 | T1.3 | Implement registration API endpoint | 8 | Done |
-
 | T1.4 | Implement password hashing and input validation | 7 | Done |
-
 | T1.5 | Connect frontend registration form to backend | 7 |To Do |
-
 | T1.6 | Test registration and error handling | 10 |In Progress |
-
 | **Total** | | **42** | |
 
 
@@ -83,19 +71,12 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 
 | Task | Description | Estimated Hours |
-
 |---|---|---:|
-
 | T2.1 | Implement login form | 4 |
-
 | T2.2 | Implement credential verification API | 6 |
-
 | T2.3 | Implement authentication and session management | 4 |
-
 | T2.4 | Handle invalid credentials and login errors | 6 |
-
 | T2.5 | Test login and authentication scenarios | 8 |
-
 | **Total** | | **28** |
 
 
@@ -175,15 +156,10 @@ The registration API was tested using the HTTP Client in Visual Studio.
 
 
 | Test ID | Test Scenario | Expected Result | Actual Result | Status |
-
 |---|---|---|---|---|
-
 | TEST 1 | Successful registration with a new email | 200 OK | 200 OK | Passed |
-
 | TEST 2 | Registration with an existing email | 409 Conflict | 409 Conflict | Passed |
-
 | TEST 3 | Registration with an invalid email format | 400 Bad Request | 400 Bad Request | Passed |
-
 | TEST 4 | Registration with mismatched passwords | 400 Bad Request | 400 Bad Request | Passed |
 
 
