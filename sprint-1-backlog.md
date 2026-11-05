@@ -1,8 +1,8 @@
-\# Sprint 1 — Sprint Backlog
+# Sprint 1 — Sprint Backlog
 
 
 
-\## 1. Sprint Goal
+## 1. Sprint Goal
 
 
 
@@ -10,23 +10,23 @@ Implement user registration and login functionality to allow users to securely a
 
 
 
-\## 2. Sprint Information
+## 2. Sprint Information
 
 
 
-\- Sprint: 1
+- Sprint: 1
 
-\- Duration: 2 weeks (planned)
+- Duration: 2 weeks (planned)
 
-\- Team: 1 developer
+- Team: 1 developer
 
-\- Availability: 6 hours/day, 6 days/week
+- Availability: 6 hours/day, 6 days/week
 
-\- Available capacity: 72 hours
+- Available capacity: 72 hours
 
-\- Estimated workload: 70 hours (preliminary)
+- Estimated workload: 70 hours (preliminary)
 
-\- Status: Planned
+- Status: In Progress
 
 
 
@@ -34,7 +34,7 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 
 
-\## 3. Selected User Stories
+## 3. Selected User Stories
 
 
 
@@ -42,43 +42,43 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 |---|---|---|---|---|
 
-| US-01 | User Registration | 1 | 3 | To Do |
+| US-01 | User Registration | 1 | 3 |  In Progress |
 
 | US-02 | User Login | 2 | 2 | To Do |
 
-| \*\*Total\*\* | | | \*\*5\*\* | |
+| **Total** | | | **5** | |
 
 
 
-\## 4. Task Decomposition
+## 4. Task Decomposition
 
 
 
-\### US-01 — User Registration (3 SP)
+### US-01 — User Registration (3 SP)
 
 
 
-| Task | Description | Estimated Hours |
+| Task | Description | Estimated Hours |Status |
 
-|---|---|---:|
+|---|---|---:|---|
 
-| T1.1 | Design registration form and input fields | 5 |
+| T1.1 | Design registration form and input fields | 5 |In Progress |
 
-| T1.2 | Design user entity and database structure | 5 |
+| T1.2 | Design user entity and database structure | 5 |Done |
 
-| T1.3 | Implement registration API endpoint | 8 |
+| T1.3 | Implement registration API endpoint | 8 | Done |
 
-| T1.4 | Implement password hashing and input validation | 7 |
+| T1.4 | Implement password hashing and input validation | 7 | Done |
 
-| T1.5 | Connect frontend registration form to backend | 7 |
+| T1.5 | Connect frontend registration form to backend | 7 |To Do |
 
-| T1.6 | Test registration and error handling | 10 |
+| T1.6 | Test registration and error handling | 10 |In Progress |
 
-| \*\*Total\*\* | | \*\*42\*\* |
+| **Total** | | **42** | |
 
 
 
-\### US-02 — User Login (2 SP)
+### US-02 — User Login (2 SP)
 
 
 
@@ -96,11 +96,11 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 | T2.5 | Test login and authentication scenarios | 8 |
 
-| \*\*Total\*\* | | \*\*28\*\* |
+| **Total** | | **28** |
 
 
 
-\## 5. Effort Estimation
+## 5. Effort Estimation
 
 
 
@@ -108,15 +108,15 @@ Estimation method: Relative Estimation supported by Task Decomposition.
 
 
 
-\- Reference User Story: US-02 = 2 Story Points
+- Reference User Story: US-02 = 2 Story Points
 
-\- US-02 estimated effort: 28 hours
+- US-02 estimated effort: 28 hours
 
-\- Preliminary conversion: 14 hours per Story Point
+- Preliminary conversion: 14 hours per Story Point
 
-\- US-01 estimated effort: 42 hours
+- US-01 estimated effort: 42 hours
 
-\- Total estimated effort: 70 hours
+- Total estimated effort: 70 hours
 
 
 
@@ -124,21 +124,21 @@ Story Points represent relative complexity and uncertainty, not a fixed number o
 
 
 
-\## 6. Sprint Capacity
+## 6. Sprint Capacity
 
 
 
-\- Daily availability: 6 hours
+- Daily availability: 6 hours
 
-\- Weekly availability: 36 hours
+- Weekly availability: 36 hours
 
-\- Planned sprint duration: 2 weeks
+- Planned sprint duration: 2 weeks
 
-\- Total available capacity: 72 hours
+- Total available capacity: 72 hours
 
-\- Estimated workload: 70 hours
+- Estimated workload: 70 hours
 
-\- Capacity buffer: 2 hours
+- Capacity buffer: 2 hours
 
 
 
@@ -146,7 +146,7 @@ The capacity buffer is limited. Actual effort and remaining work must be monitor
 
 
 
-\## 7. Progress Monitoring
+## 7. Progress Monitoring
 
 
 
@@ -154,19 +154,59 @@ Progress will be tracked using:
 
 
 
-\- Task status: To Do, In Progress, Done
+- Task status: To Do, In Progress, Done
 
-\- Estimated effort versus actual effort
+- Estimated effort versus actual effort
 
-\- Remaining effort
+- Remaining effort
 
-\- Sprint Burndown Chart
+- Sprint Burndown Chart
 
-\- Impediments and risks
+- Impediments and risks
 
 
 
-\## 8. Definition of Done
+### US-01 — Registration API Test Results
+
+
+
+The registration API was tested using the HTTP Client in Visual Studio.
+
+
+
+| Test ID | Test Scenario | Expected Result | Actual Result | Status |
+
+|---|---|---|---|---|
+
+| TEST 1 | Successful registration with a new email | 200 OK | 200 OK | Passed |
+
+| TEST 2 | Registration with an existing email | 409 Conflict | 409 Conflict | Passed |
+
+| TEST 3 | Registration with an invalid email format | 400 Bad Request | 400 Bad Request | Passed |
+
+| TEST 4 | Registration with mismatched passwords | 400 Bad Request | 400 Bad Request | Passed |
+
+
+
+All four backend registration tests passed.
+
+
+
+Test evidence is available in `src/SPM.Tourism.Api/SPM.Tourism.Api.http`.
+
+
+
+Note: The successful registration test requires an email address
+
+that is not already stored in the database.
+
+
+
+Frontend integration and end-to-end testing are still pending.
+
+
+
+## 8. Definition of Done
 
 
 
@@ -174,23 +214,23 @@ A User Story is considered Done when:
 
 
 
-\- The required functionality is implemented.
+- The required functionality is implemented.
 
-\- Acceptance criteria are satisfied.
+- Acceptance criteria are satisfied.
 
-\- Relevant tests have been executed successfully.
+- Relevant tests have been executed successfully.
 
-\- The application builds and runs.
+- The application builds and runs.
 
-\- Changes are committed to Git.
+- Changes are committed to Git.
 
-\- The feature branch is merged into main through a Pull Request.
+- The feature branch is merged into main through a Pull Request.
 
-\- Relevant documentation is updated.
+- Relevant documentation is updated.
 
 
 
-\## 9. Sprint Review
+## 9. Sprint Review
 
 
 
@@ -198,19 +238,19 @@ At the end of Sprint 1, demonstrate:
 
 
 
-\- Successful user registration.
+- Successful user registration.
 
-\- Input validation and registration error handling.
+- Input validation and registration error handling.
 
-\- Successful login with valid credentials.
+- Successful login with valid credentials.
 
-\- Rejection of invalid login credentials.
+- Rejection of invalid login credentials.
 
-\- Access to functionality protected by authentication.
+- Access to functionality protected by authentication.
 
 
 
-\## 10. Sprint Retrospective
+## 10. Sprint Retrospective
 
 
 
@@ -218,11 +258,11 @@ At the end of the sprint, document:
 
 
 
-\- What went well.
+- What went well.
 
-\- What could be improved.
+- What could be improved.
 
-\- Differences between estimated and actual effort.
+- Differences between estimated and actual effort.
 
-\- Actions to improve the next sprint.
+- Actions to improve the next sprint.
 
