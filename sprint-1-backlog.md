@@ -39,8 +39,8 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 
 | ID | User Story | Priority | Story Points | Status |
-|---|---|---|---|---|
-| US-01 | User Registration | 1 | 3 |  In Progress |
+|---|---|---:|---:|---|
+| US-01 | User Registration | 1 | 3 | In Progress |
 | US-02 | User Login | 2 | 2 | To Do |
 | **Total** | | | **5** | |
 
@@ -54,14 +54,14 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 
 
-| Task | Description | Estimated Hours |Status |
+| Task | Description | Estimated Hours | Status |
 |---|---|---:|---|
-| T1.1 | Design registration form and input fields | 5 |In Progress |
-| T1.2 | Design user entity and database structure | 5 |Done |
+| T1.1 | Design registration form and input fields | 5 | Done |
+| T1.2 | Design user entity and database structure | 5 | Done |
 | T1.3 | Implement registration API endpoint | 8 | Done |
 | T1.4 | Implement password hashing and input validation | 7 | Done |
-| T1.5 | Connect frontend registration form to backend | 7 |To Do |
-| T1.6 | Test registration and error handling | 10 |In Progress |
+| T1.5 | Connect frontend registration form to backend | 7 | Done |
+| T1.6 | Test registration and error handling | 10 | Done |
 | **Total** | | **42** | |
 
 
@@ -173,12 +173,28 @@ Test evidence is available in `src/SPM.Tourism.Api/SPM.Tourism.Api.http`.
 
 
 Note: The successful registration test requires an email address
-
 that is not already stored in the database.
 
 
 
-Frontend integration and end-to-end testing are still pending.
+### US-01 — Frontend Integration and Test Results
+
+The React registration form was connected to the ASP.NET Core backend using the registration API endpoint.
+
+CORS was configured to allow requests from the React development server.
+
+The following scenarios were successfully tested:
+- Successful user registration.
+- Registration with an existing email.
+- Invalid email format.
+- Password shorter than 8 characters.
+- Mismatched passwords.
+- Display and clearing of validation error messages.
+- Display of the registration success message.
+
+Frontend code validation passed using ESLint (`npm run lint`).
+
+The production build completed successfully using `npm run build`.
 
 
 

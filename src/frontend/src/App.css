@@ -1,0 +1,79 @@
+main {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+main h1,
+main h2 {
+  text-align: center;
+}
+
+main div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+main label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  text-align: left;
+}
+
+main input {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+main button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 16px;
+  }
+
+  main h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  main h2 {
+    font-size: 18px;
+  }
+}
+
+main .error-message {
+  color: #c62828;
+  font-size: 13px;
+  text-align: left;
+  margin: 6px 0 0;
+  line-height: 1.4;
+}
+
+main input[aria-invalid="true"] {
+  border: 1px solid #c62828;
+}
+main .success-message {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: center;
+}
