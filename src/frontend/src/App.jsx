@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import LoginForm from './LoginForm'
 
 function App() {
   const [email, setEmail] = useState('')
@@ -7,6 +8,8 @@ function App() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [errors, setErrors] = useState({})
   const [successMessage, setSuccessMessage] = useState('')
+  const [activeTab, setActiveTab] = useState('login')
+
   const handleRegister = async(event) => {
   event.preventDefault()
   setSuccessMessage('')
@@ -67,7 +70,35 @@ if (response.ok) {
 
 return (
   <main>
+
+    <img
+    src="/tourism-icon.svg"
+    alt="Tourism PWA compass logo"
+    className="app-logo"
+  />
+
     <h1>Tourism PWA</h1>
+
+  <div className="auth-tabs">
+  <button
+    type="button"
+    onClick={() => setActiveTab('login')}
+    aria-pressed={activeTab === 'login'}
+  >
+    Login
+  </button>
+
+  <button
+    type="button"
+    onClick={() => setActiveTab('register')}
+    aria-pressed={activeTab === 'register'}
+  >
+    Register
+  </button>
+</div>
+
+{activeTab === 'register' && (
+  <>
     <h2>User Registration</h2>
 
 <form onSubmit={handleRegister} noValidate>
@@ -151,6 +182,11 @@ return (
 )}
 
 </form>
+
+  </>
+)}
+
+{activeTab === 'login' && <LoginForm />}
 
   </main>
 )

@@ -77,3 +77,146 @@ main .success-message {
   font-size: 14px;
   text-align: center;
 }
+/* Tourism PWA - Nature, Sea and Adventure Theme */
+
+:root {
+  --color-background: #f8f7f2;
+  --color-primary: #127c83;
+  --color-accent: #b8533d;
+  --color-sage: #a9cdb3;
+  --color-sun: #f4be70;
+  --color-surface: #ffffff;
+  --color-text: #174f61;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+main {
+  background-color: var(--color-surface);
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(23, 79, 97, 0.12);
+}
+/* Modern Tourism PWA Authentication Interface */
+
+body {
+  background-color: #f8f7f2;
+  color: #174f61;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  width: calc(100% - 32px);
+  max-width: 510px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(23, 79, 97, 0.10);
+}
+
+main h1 {
+  color: #127c83;
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+main h2 {
+  color: #174f61;
+  font-size: 18px;
+}
+
+/* Login / Register tabs */
+
+main .auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 5px;
+  margin: 20px 0 24px;
+  background-color: #eaf3ed;
+  border-radius: 14px;
+}
+
+main .auth-tabs button {
+  width: 100%;
+  margin: 0;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #315d46;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: none;
+}
+
+main .auth-tabs button[aria-pressed="true"] {
+  background-color: #127c83;
+  color: white;
+}
+
+main .auth-tabs button[aria-pressed="false"]:hover {
+  background-color: #d8e9dd;
+}
+
+/* Form fields */
+
+main label {
+  color: #315d46;
+  font-weight: 600;
+}
+
+main input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #c6d9cb;
+  border-radius: 9px;
+  background-color: #ffffff;
+}
+
+main input:focus {
+  outline: 2px solid #127c83;
+  outline-offset: 1px;
+}
+
+/* Main action buttons */
+
+main button {
+  background-color: #127c83;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+main button:hover {
+  background-color: #0d6268;
+}
+
+main button:focus-visible {
+  outline: 3px solid #f4be70;
+  outline-offset: 3px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+  main {
+    margin: 20px auto;
+    padding: 24px;
+  }
+}
+/* Tourism PWA logo */
+
+main .app-logo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  object-fit: contain;
+}

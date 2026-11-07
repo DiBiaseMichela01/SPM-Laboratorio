@@ -41,7 +41,7 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 | ID | User Story | Priority | Story Points | Status |
 |---|---|---:|---:|---|
 | US-01 | User Registration | 1 | 3 | Done |
-| US-02 | User Login | 2 | 2 | To Do |
+| US-02 | User Login | 2 | 2 | In Progress |
 | **Total** | | | **5** | |
 
 
@@ -70,13 +70,13 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 
 
-| Task | Description | Estimated Hours |
-|---|---|---:|
-| T2.1 | Implement login form | 4 |
-| T2.2 | Implement credential verification API | 6 |
-| T2.3 | Implement authentication and session management | 4 |
-| T2.4 | Handle invalid credentials and login errors | 6 |
-| T2.5 | Test login and authentication scenarios | 8 |
+| Task | Description | Estimated Hours | Status |
+|---|---|---:|---|
+| T2.1 | Implement login form | 4 | Done |
+| T2.2 | Implement credential verification API | 6 | To Do |
+| T2.3 | Implement authentication and session management | 4 | To Do |
+| T2.4 | Handle invalid credentials and login errors | 6 | To Do |
+| T2.5 | Test login and authentication scenarios | 8 | To Do |
 | **Total** | | **28** |
 
 
@@ -197,10 +197,26 @@ Frontend code validation passed using ESLint (`npm run lint`).
 The production build completed successfully using `npm run build`.
 
 
+### US-02 — Login Frontend Progress and Test Results
+
+The login form was implemented as a separate React component (`LoginForm.jsx`).
+
+The following frontend checks were completed:
+- Login form displays Email and Password fields.
+- Login and Register tabs switch between the two forms.
+- Registration form remains accessible.
+- The login interface uses React state for Email and Password.
+- ESLint completed successfully (`npm run lint`).
+- React production build completed successfully (`npm run build`).
+
+T2.1 status: Done.
+
+The login API, credential verification, session management,
+and authentication tests have not yet been implemented.
+US-02 status: In Progress.
+
 
 ## 8. Definition of Done
-
-
 
 A User Story is considered Done when:
 
