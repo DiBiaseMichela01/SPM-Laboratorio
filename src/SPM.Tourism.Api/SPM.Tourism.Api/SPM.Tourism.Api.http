@@ -1,6 +1,39 @@
-@SPM.Tourism.Api_HostAddress = http://localhost:5176
+### TEST 1 - Successful registration (Expected: 200 OK)
+POST https://localhost:7067/api/Auth/register
+Content-Type: application/json
 
-GET {{SPM.Tourism.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+{
+  "email": "registration.success02@example.com",
+  "password": "Giulia123!",
+  "confirmPassword": "Giulia123!"
+}
 
-###
+### TEST 2 - Duplicate email (Expected: 409 Conflict)
+POST https://localhost:7067/api/Auth/register
+Content-Type: application/json
+
+{
+  "email": "giulia@example.com",
+  "password": "Giulia123!",
+  "confirmPassword": "Giulia123!"
+}
+
+### TEST 3 - Invalid email format (Expected: 400 Bad Request)
+POST https://localhost:7067/api/Auth/register
+Content-Type: application/json
+
+{
+  "email": "giuliaexample.com",
+  "password": "Giulia123!",
+  "confirmPassword": "Giulia123!"
+}
+
+### TEST 4 - Password confirmation mismatch (Expected: 400 Bad Request)
+POST https://localhost:7067/api/Auth/register
+Content-Type: application/json
+
+{
+  "email": "test.password@example.com",
+  "password": "Giulia123!",
+  "confirmPassword": "Diversa123!"
+}
