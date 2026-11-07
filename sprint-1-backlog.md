@@ -40,7 +40,7 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 
 | ID | User Story | Priority | Story Points | Status |
 |---|---|---:|---:|---|
-| US-01 | User Registration | 1 | 3 | In Progress |
+| US-01 | User Registration | 1 | 3 | Done |
 | US-02 | User Login | 2 | 2 | To Do |
 | **Total** | | | **5** | |
 
@@ -219,6 +219,21 @@ A User Story is considered Done when:
 - The feature branch is merged into main through a Pull Request.
 
 - Relevant documentation is updated.
+
+### US-01 — Definition of Done Verification
+
+All US-01 Definition of Done criteria have been satisfied.
+
+- Registration functionality implemented and tested.
+- Frontend and backend integration verified.
+- ESLint and React production build passed.
+- Sprint Backlog updated.
+- Changes committed and pushed to GitHub.
+- Pull Request #4 merged into `main` on November 7, 2026.
+
+Merge commit: `6ac0922`.
+
+US-01 final status: Done.
 
 
 
