@@ -73,7 +73,7 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 | Task | Description | Estimated Hours | Status |
 |---|---|---:|---|
 | T2.1 | Implement login form | 4 | Done |
-| T2.2 | Implement credential verification API | 6 | To Do |
+| T2.2 | Implement credential verification API | 6 | Done |
 | T2.3 | Implement authentication and session management | 4 | To Do |
 | T2.4 | Handle invalid credentials and login errors | 6 | To Do |
 | T2.5 | Test login and authentication scenarios | 8 | To Do |
@@ -168,7 +168,7 @@ All four backend registration tests passed.
 
 
 
-Test evidence is available in `src/SPM.Tourism.Api/SPM.Tourism.Api.http`.
+Test evidence is available in `src/SPM.Tourism.Api/SPM.Tourism.Api/SPM.Tourism.Api.http`.
 
 
 
@@ -211,10 +211,43 @@ The following frontend checks were completed:
 
 T2.1 status: Done.
 
-The login API, credential verification, session management,
-and authentication tests have not yet been implemented.
+The login API and credential verification have been implemented
+and tested successfully.
+
+The frontend login form is not yet connected to the backend API.
+Authentication and session management, frontend error handling,
+and end-to-end authentication tests remain to be implemented.
+
 US-02 status: In Progress.
 
+### US-02 — Credential Verification API Test Results
+
+The login API was implemented using ASP.NET Core and C#.
+
+The endpoint `POST /api/Auth/login` verifies user credentials
+using the password hash stored in the database.
+
+The API was tested using the HTTP Client in Visual Studio.
+
+| Test ID | Test Scenario | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| TEST 5 | Login with valid credentials | 200 OK | 200 OK | Passed |
+| TEST 6 | Login with incorrect password | 401 Unauthorized | 401 Unauthorized | Passed |
+| TEST 7 | Login with unregistered email | 401 Unauthorized | 401 Unauthorized | Passed |
+| TEST 8 | Login with invalid email format | 400 Bad Request | 400 Bad Request | Passed |
+
+All four login API tests passed.
+
+The ASP.NET Core backend build completed successfully.
+
+Test evidence is available in the
+`src/SPM.Tourism.Api/SPM.Tourism.Api/SPM.Tourism.Api.http` file.
+
+T2.2 status: Done.
+
+Authentication and session management are not yet implemented.
+
+US-02 status: In Progress.
 
 ## 8. Definition of Done
 

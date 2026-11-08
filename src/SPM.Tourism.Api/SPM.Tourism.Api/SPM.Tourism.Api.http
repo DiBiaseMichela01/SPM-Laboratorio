@@ -37,3 +37,35 @@ Content-Type: application/json
   "password": "Giulia123!",
   "confirmPassword": "Diversa123!"
 }
+### TEST 5 - Successful login (Expected: 200 OK)
+POST https://localhost:7067/api/Auth/login
+Content-Type: application/json
+
+{
+  "email": "registration.success02@example.com",
+  "password": "Giulia123!"
+}
+### TEST 6 - Invalid password (Expected: 401 Unauthorized)
+POST https://localhost:7067/api/Auth/login
+Content-Type: application/json
+
+{
+  "email": "registration.success02@example.com",
+  "password": "PasswordSbagliata123!"
+}
+### TEST 7 - Unregistered email (Expected: 401 Unauthorized)
+POST https://localhost:7067/api/Auth/login
+Content-Type: application/json
+
+{
+  "email": "unknown.user999@example.com",
+  "password": "Giulia123!"
+}
+### TEST 8 - Invalid email format (Expected: 400 Bad Request)
+POST https://localhost:7067/api/Auth/login
+Content-Type: application/json
+
+{
+  "email": "invalid-email",
+  "password": "Giulia123!"
+}

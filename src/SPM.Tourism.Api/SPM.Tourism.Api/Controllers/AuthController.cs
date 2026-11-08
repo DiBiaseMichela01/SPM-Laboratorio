@@ -25,6 +25,18 @@ namespace SPM.Tourism.Api.Controllers
             }
             return Ok("User registered successfully.");
         }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        {
+            bool validCredentials = await _authService.LoginAsync(request);
+
+            if (!validCredentials)
+            {
+                return Unauthorized("Invalid email or password.");
+            }
+
+            return Ok("Credentials verified successfully.");
+        }
     }
     
 }
