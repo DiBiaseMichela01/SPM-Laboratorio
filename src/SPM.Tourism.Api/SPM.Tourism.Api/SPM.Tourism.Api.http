@@ -69,3 +69,5 @@ Content-Type: application/json
   "email": "invalid-email",
   "password": "Giulia123!"
 }
+### TEST 9 - Protected endpoint without token (Expected: 401 Unauthorized)
+GET https://localhost:7067/api/Auth/me

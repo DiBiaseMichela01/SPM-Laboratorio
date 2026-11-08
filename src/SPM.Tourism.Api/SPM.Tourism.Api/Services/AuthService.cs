@@ -43,7 +43,7 @@ namespace SPM.Tourism.Api.Services
 
             return true;
         }
-        public async Task<bool> LoginAsync(LoginRequest request)
+        public async Task<User?> LoginAsync(LoginRequest request)
         {
             // Find the user by email
             User? user = await _context.Users.FirstOrDefaultAsync(
@@ -51,7 +51,7 @@ namespace SPM.Tourism.Api.Services
 
             if (user == null)
             {
-                return false;
+                return null;
             }
 
             // Verify the password hash
@@ -62,7 +62,12 @@ namespace SPM.Tourism.Api.Services
                 user.PasswordHash,
                 request.Password);
 
-            return result != PasswordVerificationResult.Failed;
+            if (result == PasswordVerificationResult.Failed)
+            {
+                return null;
+            }
+            // Return the authenticated user
+            return user;
         }
     }
 }

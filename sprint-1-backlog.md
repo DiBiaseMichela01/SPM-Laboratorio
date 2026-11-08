@@ -74,7 +74,7 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 |---|---|---:|---|
 | T2.1 | Implement login form | 4 | Done |
 | T2.2 | Implement credential verification API | 6 | Done |
-| T2.3 | Implement authentication and session management | 4 | To Do |
+| T2.3 | Implement authentication and session management | 4 | Done |
 | T2.4 | Handle invalid credentials and login errors | 6 | To Do |
 | T2.5 | Test login and authentication scenarios | 8 | To Do |
 | **Total** | | **28** |
@@ -214,9 +214,16 @@ T2.1 status: Done.
 The login API and credential verification have been implemented
 and tested successfully.
 
+The backend JWT authentication mechanism has been implemented
+and tested successfully.
+
+The login endpoint now generates a signed JWT after successful
+credential verification. Protected API endpoints require a valid
+JWT, and tokens expire after one hour.
+
 The frontend login form is not yet connected to the backend API.
-Authentication and session management, frontend error handling,
-and end-to-end authentication tests remain to be implemented.
+Frontend error handling and end-to-end authentication tests
+remain to be implemented.
 
 US-02 status: In Progress.
 
@@ -245,9 +252,55 @@ Test evidence is available in the
 
 T2.2 status: Done.
 
-Authentication and session management are not yet implemented.
+JWT-based stateless authentication has been implemented
+and tested as part of T2.3.
+
+Frontend authentication integration and end-to-end tests
+are still pending.
 
 US-02 status: In Progress.
+
+
+### US-02 — JWT Authentication and Security Test Results
+
+JWT Bearer authentication was implemented in the ASP.NET Core backend.
+
+The login endpoint generates a signed JWT after successful
+credential verification.
+
+JWT validation checks the token signature, issuer, audience,
+and expiration time.
+
+The signing key is stored locally using ASP.NET Core User Secrets
+and is not included in the Git repository.
+
+The following tests were executed using Visual Studio and PowerShell.
+
+| Test ID | Test Scenario | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| TEST 9 | Protected endpoint without JWT | 401 Unauthorized | 401 Unauthorized | Passed |
+| TEST 10 | Protected endpoint with valid JWT | 200 OK | 200 OK | Passed |
+| TEST 11 | Protected endpoint with malformed JWT | 401 Unauthorized | 401 Unauthorized | Passed |
+| TEST 12 | Protected endpoint with modified JWT signature | 401 Unauthorized | 401 Unauthorized | Passed |
+| TEST 13 | Protected endpoint with expired JWT | 401 Unauthorized | 401 Unauthorized | Passed |
+
+All five JWT authentication tests passed.
+
+For the expiration test, the JWT lifetime was temporarily
+reduced to 10 seconds. The token was rejected after the
+configured expiration period and clock skew.
+
+The original JWT lifetime of one hour was restored afterward.
+
+The final backend build completed successfully.
+The login and protected endpoint were tested again successfully.
+
+Authentication uses stateless JWT access tokens.
+Server-side session storage and refresh tokens are not implemented.
+
+T2.3 status: Done.
+US-02 status: In Progress.
+
 
 ## 8. Definition of Done
 
