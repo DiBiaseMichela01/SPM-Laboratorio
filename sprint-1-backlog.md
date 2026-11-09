@@ -75,7 +75,7 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 | T2.1 | Implement login form | 4 | Done |
 | T2.2 | Implement credential verification API | 6 | Done |
 | T2.3 | Implement authentication and session management | 4 | Done |
-| T2.4 | Handle invalid credentials and login errors | 6 | To Do |
+| T2.4 | Handle invalid credentials and login errors | 6 | Done |
 | T2.5 | Test login and authentication scenarios | 8 | To Do |
 | **Total** | | **28** |
 
@@ -221,9 +221,24 @@ The login endpoint now generates a signed JWT after successful
 credential verification. Protected API endpoints require a valid
 JWT, and tokens expire after one hour.
 
-The frontend login form is not yet connected to the backend API.
-Frontend error handling and end-to-end authentication tests
-remain to be implemented.
+
+The React login form is now connected to the ASP.NET Core backend
+through the POST /api/Auth/login endpoint.
+
+After successful authentication, the frontend receives a JWT
+and stores it temporarily in React component state.
+
+The JWT is used to access the protected GET /api/Auth/me endpoint
+through the Authorization Bearer header.
+
+Frontend login error handling has been implemented and tested
+for invalid credentials, invalid requests, and network failures.
+
+Previous error messages are cleared after successful authentication.
+
+Final end-to-end authentication testing and acceptance checks
+are still pending.
+
 
 US-02 status: In Progress.
 
@@ -255,7 +270,10 @@ T2.2 status: Done.
 JWT-based stateless authentication has been implemented
 and tested as part of T2.3.
 
-Frontend authentication integration and end-to-end tests
+Frontend authentication integration and manual login tests
+were completed during Day 11.
+
+Final end-to-end testing and acceptance checks
 are still pending.
 
 US-02 status: In Progress.
@@ -300,6 +318,77 @@ Server-side session storage and refresh tokens are not implemented.
 
 T2.3 status: Done.
 US-02 status: In Progress.
+
+
+### US-02 — Day 11: Frontend Authentication Integration and Test Results
+
+The React login form was integrated with the ASP.NET Core
+authentication API.
+
+The frontend sends user credentials using the Fetch API
+and receives a JWT after successful authentication.
+
+The JWT is stored temporarily in React component state
+and used to access protected backend resources.
+
+The following scenarios were manually tested using Chrome
+and its Developer Tools.
+
+| Test ID | Test Scenario | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| TEST 14 | Successful login from React | 200 OK and JWT received | 200 OK and JWT received | Passed |
+| TEST 15 | Protected endpoint access with valid JWT | 200 OK | 200 OK | Passed |
+| TEST 16 | Protected access without JWT in React | Request blocked by frontend | Request blocked by frontend | Passed |
+| TEST 17 | Login with incorrect password | 401 Unauthorized and error message | 401 Unauthorized and error message | Passed |
+| TEST 18 | Successful login after incorrect password | Previous error disappears | Previous error disappears | Passed |
+| TEST 19 | Login while backend is unavailable | Connection error message displayed | Connection error message displayed | Passed |
+| TEST 20 | Login after restarting the backend | 200 OK and error cleared | 200 OK and error cleared | Passed |
+| TEST 21 | Login with invalid email format | 400 Bad Request and generic error message | 400 Bad Request and generic error message | Passed |
+
+All eight frontend authentication scenarios passed.
+
+#### Login Error Handling
+
+The following error-handling mechanisms were implemented:
+
+- HTTP 401: Display "Invalid email or password."
+- Other HTTP errors: Display "Login failed. Please try again."
+- Network failures: Display "Unable to connect to the server. Please try again."
+- Successful authentication: Clear previous login errors.
+
+Previous JWT values are cleared after failed authentication.
+
+T2.4 status: Done.
+
+#### Frontend Code Quality and CSS Improvements
+
+ESLint completed successfully using:
+
+`npm run lint --prefix src/frontend`
+
+The React production build completed successfully using:
+
+`npm run build --prefix src/frontend`
+
+The App.css file was refactored to reduce duplicated CSS rules.
+
+The main application container and responsive layout rules
+were reorganized while preserving the existing Tourism PWA design.
+
+The application was visually checked in a reduced browser window.
+
+Additional mobile-device viewport testing remains pending.
+
+#### Remaining Work
+
+- Complete final authentication acceptance tests.
+- Review temporary testing controls in the login interface.
+- Complete the Definition of Done for US-02.
+- Commit and push Day 11 changes to GitHub.
+
+T2.5 status: To Do.
+US-02 status: In Progress.
+
 
 
 ## 8. Definition of Done
