@@ -76,7 +76,7 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 | T2.2 | Implement credential verification API | 6 | Done |
 | T2.3 | Implement authentication and session management | 4 | Done |
 | T2.4 | Handle invalid credentials and login errors | 6 | Done |
-| T2.5 | Test login and authentication scenarios | 8 | To Do |
+| T2.5 | Test login and authentication scenarios | 8 | Done |
 | **Total** | | **28** |
 
 
@@ -146,10 +146,38 @@ Progress will be tracked using:
 - Impediments and risks
 
 
+### Planned vs Actual Schedule — Sprint 1
+
+During Sprint 1, actual progress was compared with the initial daily work plan.
+
+Some activities were completed earlier than expected, allowing work on subsequent planned activities within the same calendar day.
+
+| Date | Planned Activities | Actual Progress | Observation |
+|---|---|---|---|
+| 2026-11-02 | Day 3 activities | Day 3 completed; Day 4 started | Progress ahead of the daily plan. Day 2 had been started on earlier dates. |
+| 2026-11-07 | US-01 and US-02 activities | US-01 completed and T2.1 of US-02 completed | Work progressed across two User Stories on the same day. |
+| 2026-11-08 | Day 9 and Day 10 activities | T2.2 and T2.3 completed | Two planned workdays completed during one calendar day. |
+
+#### Schedule Monitoring Notes
+
+- The original Sprint estimates remain unchanged.
+- Planned workdays are used as scheduling references, not as measurements of actual effort.
+- Completing multiple planned activities on the same day does not necessarily imply a reduction in working hours.
+- Actual effort will be recorded separately when reliable information is available.
+- No actual working hours are inferred from the number of planned days completed.
+- The causes of schedule deviations will be reviewed during the Sprint Retrospective.
+- Remaining work will be monitored to support the Sprint Burndown Chart.
+
+#### Impact on Sprint Planning
+
+The observed progress indicates that some activities were completed earlier than their planned position in the schedule.
+
+This will be considered when reviewing estimation accuracy and planning future sprints.
+
+Story Points and initial effort estimates will be preserved to allow comparison between planned and actual progress.
+
 
 ### US-01 — Registration API Test Results
-
-
 
 The registration API was tested using the HTTP Client in Visual Studio.
 
@@ -228,15 +256,21 @@ through the POST /api/Auth/login endpoint.
 After successful authentication, the frontend receives a JWT
 and stores it temporarily in React component state.
 
-The JWT is used to access the protected GET /api/Auth/me endpoint
-through the Authorization Bearer header.
+During authentication testing, the JWT was used to access the
+protected GET /api/Auth/me endpoint through the Authorization
+Bearer header.
+
+The temporary frontend testing control was removed after
+successful verification. The protected backend endpoint remains available.
 
 Frontend login error handling has been implemented and tested
 for invalid credentials, invalid requests, and network failures.
 
 Previous error messages are cleared after successful authentication.
 
-Final end-to-end authentication testing and acceptance checks
+Final end-to-end authentication tests were completed during Day 12.
+
+GitHub integration and Definition of Done verification
 are still pending.
 
 
@@ -274,6 +308,9 @@ Frontend authentication integration and manual login tests
 were completed during Day 11.
 
 Final end-to-end testing and acceptance checks
+were completed during Day 12.
+
+GitHub integration and Definition of Done verification
 are still pending.
 
 US-02 status: In Progress.
@@ -381,13 +418,72 @@ Additional mobile-device viewport testing remains pending.
 
 #### Remaining Work
 
-- Complete final authentication acceptance tests.
-- Review temporary testing controls in the login interface.
-- Complete the Definition of Done for US-02.
-- Commit and push Day 11 changes to GitHub.
+- Review the modified files using Git.
+- Commit and push the US-02 changes to GitHub.
+- Create and merge the US-02 Pull Request into `main`.
+- Verify the Definition of Done for US-02.
+- Complete Sprint progress monitoring, including actual effort and remaining work.
+- Complete the Sprint Review and Sprint Retrospective.
 
-T2.5 status: To Do.
+
+T2.5 status: Done.
 US-02 status: In Progress.
+
+
+### US-02 — Day 12: Final Authentication and Validation Tests
+
+Final authentication testing was performed using the React frontend, ASP.NET Core backend, and Chrome Developer Tools.
+
+| Test ID | Test Scenario | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| TEST 22 | Login with valid credentials | 200 OK and JWT received | 200 OK and JWT received | Passed |
+| TEST 23 | Protected endpoint access with valid JWT | 200 OK | 200 OK | Passed |
+| TEST 24 | Login with incorrect password | 401 Unauthorized | 401 Unauthorized | Passed |
+| TEST 25 | Invalid credentials error feedback | Error message displayed | Error message displayed | Passed |
+| TEST 26 | Successful login after incorrect password | Previous error disappears | Previous error disappears | Passed |
+| TEST 27 | Protected access without JWT in React | Request blocked by frontend | Request blocked by frontend | Passed |
+| TEST 28 | Empty login fields before validation improvement | 400 Bad Request and generic error | 400 Bad Request and generic error | Observed |
+| TEST 29 | Email and password missing | Both field errors displayed | Both field errors displayed | Passed |
+| TEST 30 | Password missing | Password is required | Password is required | Passed |
+| TEST 31 | Email missing | Email is required | Email is required | Passed |
+| TEST 32 | Valid login after validation changes | 200 OK | 200 OK | Passed |
+| TEST 33 | Invalid email format | Email validation error | Email validation error | Passed |
+
+#### Additional Validation Checks
+
+- Invalid email and missing password produce two separate validation messages.
+- Validation messages appear below the corresponding input fields.
+- Invalid fields are highlighted using `aria-invalid`.
+- Field validation messages are cleared when the user modifies the corresponding input.
+- Invalid login input is blocked before sending an HTTP request.
+- Chrome Network confirmed that no POST request to `/api/Auth/login` was sent for invalid input.
+- Valid login requests successfully reached the backend and returned HTTP 200.
+- The CORS preflight request completed successfully with HTTP 204.
+
+#### Frontend Code Quality
+
+ESLint completed successfully:
+
+`npm run lint --prefix src/frontend`
+
+React production build completed successfully:
+
+`npm run build --prefix src/frontend`
+
+#### Validation Improvement
+
+During final testing, generic error feedback was identified for empty login fields.
+
+Client-side field validation was introduced to provide more specific feedback and prevent unnecessary backend requests.
+
+The login interface was aligned with the registration interface by displaying validation errors below the corresponding fields.
+
+Previously completed authentication functionality was preserved and verified through regression testing.
+
+T2.5 status: In Progress.
+
+Final Definition of Done verification and GitHub integration are still pending.
+
 
 
 
