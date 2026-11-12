@@ -43,5 +43,31 @@ namespace SPM.Tourism.Api.Services
 
             return true;
         }
+        public async Task<User?> LoginAsync(LoginRequest request)
+        {
+            // Find the user by email
+            User? user = await _context.Users.FirstOrDefaultAsync(
+                user => user.Email == request.Email);
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            // Verify the password hash
+            var passwordHasher = new PasswordHasher<User>();
+
+            var result = passwordHasher.VerifyHashedPassword(
+                user,
+                user.PasswordHash,
+                request.Password);
+
+            if (result == PasswordVerificationResult.Failed)
+            {
+                return null;
+            }
+            // Return the authenticated user
+            return user;
+        }
     }
 }

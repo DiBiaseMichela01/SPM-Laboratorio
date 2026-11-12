@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="SPM.Tourism.Api.Tests/SPM.Tourism.Api.Tests.csproj" Id="747e8456-b6d0-4110-99ba-12ba3e775a32" />
   <Project Path="SPM.Tourism.Api/SPM.Tourism.Api.csproj" />
 </Solution>
