@@ -26,7 +26,7 @@ Implement user registration and login functionality to allow users to securely a
 
 - Estimated workload: 70 hours (preliminary)
 
-- Status: In Progress
+- Status: Done
 
 
 
@@ -41,7 +41,7 @@ The sprint may be completed earlier if all selected User Stories meet their acce
 | ID | User Story | Priority | Story Points | Status |
 |---|---|---:|---:|---|
 | US-01 | User Registration | 1 | 3 | Done |
-| US-02 | User Login | 2 | 2 | In Progress |
+| US-02 | User Login | 2 | 2 | Done |
 | **Total** | | | **5** | |
 
 
@@ -602,40 +602,126 @@ Merge commit: `6ac0922`.
 US-01 final status: Done.
 
 
+### US-02 — Definition of Done Verification
+
+Formal DoD verification was documented on November 12, 2026, following the merge of Pull Request #6.
+
+#### Functional Requirements
+- [x] Login functionality implemented using ASP.NET Core and React.
+- [x] Password verification implemented using stored password hashes.
+- [x] JWT authentication and protected API access implemented.
+- [x] Authentication errors and client-side input validation handled.
+
+#### Testing and Quality
+- [x] Acceptance criteria verified through manual testing.
+- [x] Authentication and registration-to-login workflows tested.
+- [x] Three automated NUnit integration tests passed.
+- [x] Frontend ESLint and production build passed.
+- [x] Relevant testing results documented in the Sprint Backlog.
+
+#### Git and Integration
+- [x] Changes committed and pushed to GitHub.
+- [x] Pull Request #6 merged into `main` on November 12, 2026.
+- [x] Local `main` updated and working tree verified clean after the merge.
+
+Merge commit: `0390ead`.
+
+#### Process Note
+Functional testing, automated testing, and the initial Sprint Backlog
+documentation were completed before the merge.
+
+The formal Definition of Done verification was documented after
+the merge rather than before it. This process deviation will be
+reviewed during the Sprint Retrospective.
+
+US-02 final status: Done.
+
+
+
 
 ## 9. Sprint Review
 
+### Sprint Goal Evaluation
 
+The Sprint 1 goal was achieved: user registration and login
+functionality were implemented and integrated into the Tourism PWA.
 
-At the end of Sprint 1, demonstrate:
+### Completed User Stories
 
+- US-01 — User Registration: Done (3 Story Points).
+- US-02 — User Login: Done (2 Story Points).
 
+Total completed: 5 out of 5 planned Story Points.
 
-- Successful user registration.
+### Increment Verification
 
-- Input validation and registration error handling.
+The implemented increment supports:
+- User registration with input validation.
+- Secure password hashing and verification.
+- Login with JWT-based authentication.
+- Protected API access.
+- Error handling for invalid credentials.
+- Responsive registration and login interfaces.
 
-- Successful login with valid credentials.
+Functional behaviour was verified through manual testing,
+integration scenarios, and automated NUnit tests.
 
-- Rejection of invalid login credentials.
+Automated test results: 3 passed, 0 failed.
 
-- Access to functionality protected by authentication.
+A registration-to-login workflow was successfully tested.
+The same workflow is available for the final live demonstration.
 
+### Sprint Review Outcome
 
+Both selected User Stories satisfy the documented
+Definition of Done.
+
+US-01 was integrated through Pull Request #4.
+US-02 was integrated through Pull Request #6.
+
+The Sprint Goal is considered achieved.
 
 ## 10. Sprint Retrospective
 
+### What Went Well
 
+- Both planned User Stories were completed.
+- Backend and frontend integration was successful.
+- JWT authentication and password security were implemented.
+- Manual and automated testing verified critical functionality.
+- Git branches and Pull Requests supported development traceability.
 
-At the end of the sprint, document:
+### What Could Be Improved
 
+- Additional automated testing extended Day 12 activities.
+- The initial testing plan underestimated the need for
+  isolated automated integration tests.
+- Formal Definition of Done verification for US-02
+  was documented after the merge rather than before it.
 
+### Planned vs Actual Effort
 
-- What went well.
+Initial estimated effort: 70 hours.
+Available Sprint capacity: 72 hours.
 
-- What could be improved.
+Actual working hours were not recorded with sufficient
+precision for a reliable numerical comparison.
 
-- Differences between estimated and actual effort.
+The additional Quality Assurance activities represent
+a deviation from the original daily schedule.
 
-- Actions to improve the next sprint.
+The original estimates remain unchanged.
 
+### Improvement Actions for Sprint 2
+
+1. Define the automated testing strategy during Sprint Planning.
+2. Include testing and documentation in task decomposition.
+3. Complete the formal Definition of Done checklist before merging.
+4. Record actual effort and remaining work more consistently.
+5. Review schedule deviations during Sprint Monitoring.
+
+### Retrospective Conclusion
+
+Sprint 1 achieved its functional objectives.
+The identified process improvements will be applied
+during Sprint 2 — Data Ingestion.
