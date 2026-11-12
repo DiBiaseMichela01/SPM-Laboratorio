@@ -176,6 +176,24 @@ This will be considered when reviewing estimation accuracy and planning future s
 
 Story Points and initial effort estimates will be preserved to allow comparison between planned and actual progress.
 
+#### Day 12 — Schedule Deviation and Quality Assurance Extension
+
+Day 12 activities were extended beyond the initial plan to strengthen the Quality Assurance process for US-01 (User Registration) and US-02 (User Login).
+
+Following the successful completion of manual authentication tests, three automated integration tests were introduced using NUnit, Entity Framework Core, and isolated SQLite in-memory databases.
+
+The additional activities included:
+- Implementing automated tests for password hashing, duplicate email registration, and credential verification.
+- Configuring isolated test databases to ensure repeatable and independent execution.
+- Executing and validating the automated test suite.
+- Updating the Sprint Backlog with testing results and evidence.
+
+All three automated tests passed successfully.
+
+**Impact on Sprint Planning:** The extension increased the scope of Quality Assurance activities compared with the original daily plan. The initial Story Points and effort estimates remain unchanged to preserve the planned baseline.
+
+Actual working hours will not be inferred from the number of calendar days. This deviation will be reviewed during the Sprint Retrospective to improve testing estimates and planning in subsequent sprints.
+
 
 ### US-01 — Registration API Test Results
 
@@ -414,7 +432,11 @@ were reorganized while preserving the existing Tourism PWA design.
 
 The application was visually checked in a reduced browser window.
 
-Additional mobile-device viewport testing remains pending.
+Mobile responsive layout testing was completed during Day 12
+using Chrome DevTools at a viewport width of 400px.
+
+Both Login and Registration forms displayed correctly,
+with no visible overlapping or clipped elements.
 
 #### Remaining Work
 
@@ -448,6 +470,62 @@ Final authentication testing was performed using the React frontend, ASP.NET Cor
 | TEST 31 | Email missing | Email is required | Email is required | Passed |
 | TEST 32 | Valid login after validation changes | 200 OK | 200 OK | Passed |
 | TEST 33 | Invalid email format | Email validation error | Email validation error | Passed |
+| TEST 34 | Mobile responsive layout (400px): Login and Registration | Forms and buttons visible without overlap | Both forms displayed correctly at 400px | Passed |
+| TEST 35 | Registration followed by login with the same credentials | Newly registered user can log in successfully | Registration successful; login returned 200 OK and success message displayed | Passed |
+
+#### Testing Strategy and Additional Test Rationale
+
+The testing strategy focused on verifying the acceptance criteria
+of US-01 (User Registration) and US-02 (User Login).
+
+Functional tests were performed to verify registration, authentication,
+input validation, error handling, and protected API access.
+
+Additional tests were selected based on the criticality of the
+functionalities and the expected user experience.
+
+TEST 34 was performed to verify the mobile layout of the Login
+and Registration interfaces at a viewport width of 400px.
+
+TEST 35 was performed to verify the complete user workflow,
+from registration to successful login using the same credentials.
+
+This integration test confirmed that US-01 and US-02 work together
+correctly and provides a reproducible scenario for the Sprint Review
+and final live demonstration.
+
+
+#### Automated Integration Tests — Sprint 1
+
+Automated tests were implemented using NUnit and executed
+through Visual Studio Test Explorer.
+
+Each test uses an isolated SQLite in-memory database.
+
+| ID | Test Scenario | Actual Result | Status |
+|---|---|---|---|
+| AUTO-01 | Registration stores a password hash instead of plaintext | Password hash stored correctly | Passed |
+| AUTO-02 | Registration with a duplicate email | Second registration rejected; only one user stored | Passed |
+| AUTO-03 | Login with correct and incorrect passwords | Correct password accepted; incorrect password rejected | Passed |
+
+Execution summary:
+- Tests executed: 3
+- Passed: 3
+- Failed: 0
+- Skipped: 0
+- Total execution time: 1.7 seconds
+
+Testing Strategy:
+Automated integration tests focus on critical authentication
+behaviours related to US-01 and US-02.
+
+The tests complement the previously completed manual tests
+and support regression testing.
+
+Tools: NUnit, Entity Framework Core, SQLite in-memory,
+Visual Studio Test Explorer.
+
+
 
 #### Additional Validation Checks
 
@@ -480,9 +558,10 @@ The login interface was aligned with the registration interface by displaying va
 
 Previously completed authentication functionality was preserved and verified through regression testing.
 
-T2.5 status: In Progress.
+T2.5 status: Done.
 
-Final Definition of Done verification and GitHub integration are still pending.
+Pull Request, merge into main, and final Definition of Done
+verification are still pending.
 
 
 
