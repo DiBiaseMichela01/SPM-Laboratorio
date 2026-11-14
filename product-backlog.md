@@ -16,8 +16,8 @@ The User Stories have been prioritised based on User Value, Dependencies, and Lo
 
 | ID | User Story | Priority | Story Points | Sprint | Status |
 |---|---|---|---|---|---|
-| US-01 | User Registration | 1 | 3 | 1 | To Do |
-| US-02 | User Login | 2 | 2 | 1 | To Do |
+| US-01 | User Registration | 1 | 3 | 1 | Done |
+| US-02 | User Login | 2 | 2 | 1 | Done |
 | US-03 | Tourism Content | 3 | 5 | 2 | To Do |
 | US-04 | Preferences Questionnaire | 4 | 3 | 3 | To Do |
 | US-05 | Personalised Recommendations | 5 | 8 | 3 | To Do |

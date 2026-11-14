@@ -220,7 +220,16 @@ The following decisions must be documented during project planning:
 
 
 
-- Municipality to be selected for tourism data ingestion.
+- Municipality selected for tourism data ingestion: Gradara.
+  - Decision rationale: Gradara was selected after examining
+    the updated public tourism API. The cultural sites endpoint
+    returned 15 records for Gradara, compared with 0 for
+    Acqualagna.
+  - The available cultural sites include different typologies,
+    supporting tourism content exploration and future
+    personalisation features.
+  - API: https://apipublic.eppoi.io
+  - Documentation: https://apipublic.eppoi.io/scalar/
 
 - Detailed technology stack and development environment.
 
