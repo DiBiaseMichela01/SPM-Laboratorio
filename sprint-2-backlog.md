@@ -42,7 +42,7 @@ and display tourism content to authenticated users.
 
 |---|---|---|---|---|
 
-| US-03 | Tourism Content | 3 | 5 | To Do |
+| US-03 | Tourism Content | 3 | 5 | In Progress |
 
 
 
@@ -84,7 +84,7 @@ and activities.
 
 | T3.1 | Analyse API endpoints, data formats and available content | 6 | In Progress |
 
-| T3.2 | Design tourism entities and database structure | 8 | To Do |
+| T3.2 | Design tourism entities and database structure | 8 | Done |
 
 | T3.3 | Implement API data retrieval and pagination | 12 | To Do |
 
@@ -366,15 +366,17 @@ partial completion during the Sprint.
 
 
 
-\### Progress Tracking
+\### Planned vs Actual Schedule — Sprint 2
 
 
 
-| Date | Activity | Status | Actual Hours | Notes |
+| Date | Planned Activities | Actual Progress | Observation |
 
-|---|---|---|---|---|
+|---|---|---|---|
 
-| 2026-11-14 | Sprint Planning and API analysis | In Progress | Not recorded | Gradara selected; API structure and cultural sites examined |
+| 2026-11-14 | Sprint Planning and initial API analysis | Defined Sprint Goal, Task Decomposition, estimates, Risk Planning, Monitoring and Definition of Done; selected Gradara | Planning completed and pushed to GitHub. T3.1 remains In Progress. |
+
+| 2026-11-15 | Day 2 - T3.2: Tourism database design | Created TourismContent.cs, updated ApplicationDbContext, generated and applied the AddTourismContent migration | T3.2 completed. Both .NET projects compiled successfully. The migration does not modify the Users table. Actual hours not recorded. |
 
 
 
@@ -558,7 +560,7 @@ criteria have been verified.
 
 
 
-US-03 status: To Do.
+US-03 status: In Progress.
 
 
 

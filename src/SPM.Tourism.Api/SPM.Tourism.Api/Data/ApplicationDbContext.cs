@@ -9,5 +9,6 @@ namespace SPM.Tourism.Api.Data
         { }
 
     public DbSet<User> Users { get; set; }
+        public DbSet<TourismContent> TourismContents { get; set; }
     }
 }
