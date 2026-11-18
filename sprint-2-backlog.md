@@ -82,11 +82,11 @@ and activities.
 
 |---|---|---:|---|
 
-| T3.1 | Analyse API endpoints, data formats and available content | 6 | In Progress |
+| T3.1 | Analyse API endpoints, data formats and available content | 6 | Done |
 
 | T3.2 | Design tourism entities and database structure | 8 | Done |
 
-| T3.3 | Implement API data retrieval and pagination | 12 | To Do |
+| T3.3 | Implement API data retrieval and pagination | 12 | Done |
 
 | T3.4 | Implement data validation and transformation | 10 | To Do |
 
@@ -377,6 +377,10 @@ partial completion during the Sprint.
 | 2026-11-14 | Sprint Planning and initial API analysis | Defined Sprint Goal, Task Decomposition, estimates, Risk Planning, Monitoring and Definition of Done; selected Gradara | Planning completed and pushed to GitHub. T3.1 remains In Progress. |
 
 | 2026-11-15 | Day 2 - T3.2: Tourism database design | Created TourismContent.cs, updated ApplicationDbContext, generated and applied the AddTourismContent migration | T3.2 completed. Both .NET projects compiled successfully. The migration does not modify the Users table. Actual hours not recorded. |
+
+| 2026-11-17 | Day 3 - T3.1 completion and T3.3 implementation | Completed analysis of four API categories, configured HttpClient, implemented TourismApiService and automatic pagination and added NUnit integration test | T3.1 completed. Backend and test projects compiled successfully. |
+
+| 2026-11-18 | Day 3 - T3.3 verification | Verified live API retrieval: 4/4 NUnit tests passed in both executions, retrieved 29 records in the first execution and 30 in the second | T3.3 completed. Public events increased from 9 to 10 between the two executions. |
 
 
 

@@ -61,6 +61,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<AuthService>();
 
+// Register the service for retrieving external tourism data
+builder.Services.AddScoped<TourismApiService>();
+
+// Configure the HTTP client for the external tourism API
+builder.Services.AddHttpClient("TourismApi", client =>
+{
+    client.BaseAddress = new Uri("https://apipublic.eppoi.io/");
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
+
 builder.Services.AddScoped<JwtTokenService>();
 
 // Configure JWT Bearer authentication
