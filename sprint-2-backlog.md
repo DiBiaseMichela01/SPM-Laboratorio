@@ -88,7 +88,7 @@ and activities.
 
 | T3.3 | Implement API data retrieval and pagination | 12 | Done |
 
-| T3.4 | Implement data validation and transformation | 10 | To Do |
+| T3.4 | Implement data validation and transformation | 10 | Done |
 
 | T3.5 | Implement local storage and duplicate handling | 8 | To Do |
 
@@ -381,6 +381,8 @@ partial completion during the Sprint.
 | 2026-11-17 | Day 3 - T3.1 completion and T3.3 implementation | Completed analysis of four API categories, configured HttpClient, implemented TourismApiService and automatic pagination and added NUnit integration test | T3.1 completed. Backend and test projects compiled successfully. |
 
 | 2026-11-18 | Day 3 - T3.3 verification | Verified live API retrieval: 4/4 NUnit tests passed in both executions, retrieved 29 records in the first execution and 30 in the second | T3.3 completed. Public events increased from 9 to 10 between the two executions. |
+
+| 2026-11-19 | Day 4 - T3.4: Data validation and transformation | Implemented TourismContentMapper with GUID and name validation, optional field handling, HTML description cleaning and 4 NUnit unit tests | T3.4 completed. All 8 NUnit tests passed. Sample records from all four API categories were checked for field compatibility. Actual hours not recorded. |
 
 
 
