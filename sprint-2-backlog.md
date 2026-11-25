@@ -90,7 +90,7 @@ and activities.
 
 | T3.4 | Implement data validation and transformation | 10 | Done |
 
-| T3.5 | Implement local storage and duplicate handling | 8 | To Do |
+| T3.5 | Implement local storage and duplicate handling | 8 | Done |
 
 | T3.6 | Implement protected backend endpoints for stored content | 6 | To Do |
 
@@ -383,6 +383,8 @@ partial completion during the Sprint.
 | 2026-11-18 | Day 3 - T3.3 verification | Verified live API retrieval: 4/4 NUnit tests passed in both executions, retrieved 29 records in the first execution and 30 in the second | T3.3 completed. Public events increased from 9 to 10 between the two executions. |
 
 | 2026-11-19 | Day 4 - T3.4: Data validation and transformation | Implemented TourismContentMapper with GUID and name validation, optional field handling, HTML description cleaning and 4 NUnit unit tests | T3.4 completed. All 8 NUnit tests passed. Sample records from all four API categories were checked for field compatibility. Actual hours not recorded. |
+
+| 2026-11-24 | Day 5 - T3.5: Local storage and duplicate handling | Implemented TourismContentStorageService with SQLite persistence and duplicate detection; added 3 NUnit tests for new records, duplicates within the same import and records already stored | T3.5 completed. All 11 NUnit tests passed. Actual hours not recorded. |
 
 
 
